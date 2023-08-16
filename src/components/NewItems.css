@@ -1,0 +1,81 @@
+.newitems {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  margin: 2rem 1rem 0 1rem;
+}
+.newitems-h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: red;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+.newitems-p {
+  text-align: center;
+
+  align-self: center;
+  max-width: 800px;
+}
+.newitems-newcubes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+.newitems-newcubes-cube {
+  border: 1px solid rgb(187, 187, 187);
+  width: 190px;
+  max-height: 400px;
+}
+.newitems-newcubes-cube:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+.newitems-newcubes-cube:hover h1,
+.newitems-newcubes-cube:hover p {
+  color: white;
+}
+.newitems-newcubes-cube img {
+  border-bottom: 1px solid rgb(187, 187, 187);
+  width: 190px;
+  height: 150px;
+  margin-bottom: 1rem;
+}
+.newitems-newcubes-cube-about {
+  padding-left: 1rem;
+}
+.newitems-newcubes-cube-about-title {
+  font-size: 1rem;
+  font-weight: 700;
+  height: 60px;
+}
+.newitems-newcubes-cube-about-price {
+  font-size: 24px;
+  color: red;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.newitems-newcubes-cube-about-description {
+  border-top: 1px solid rgb(187, 187, 187);
+  font-size: 12px;
+  margin-right: 1rem;
+  padding-bottom: 3rem;
+  height: 85px;
+}
+.newitems-newcubes-cube-about-cart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(185, 185, 185);
+  color: black;
+  padding: 5px;
+  border-top: 1px solid rgb(187, 187, 187);
+}
+.newitems-newcubes-cube-about-cart h1:hover {
+  color: black;
+}
+.newitems button {
+  margin: 2rem 0 2rem 0;
+  align-self: center;
+}

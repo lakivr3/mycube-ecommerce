@@ -1,0 +1,22 @@
+.cubes-cube {
+  display: flex;
+  flex-direction: column;
+}
+.cubes {
+  display: flex;
+  /* display: grid;
+  grid-template-columns: repeat(6, 1fr); */
+}
+@media screen and (min-width: 910px) {
+  .cubes {
+    display: grid;
+    margin-left: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media screen and (min-width: 1160px) {
+  .cubes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
