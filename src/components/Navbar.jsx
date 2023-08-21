@@ -11,14 +11,14 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
 
   return (
-    <nav className="navbar">
+    <nav className="navbar ">
       <div className="navbar-logo">
         <Link to="/">
           <img className="navbar-my" src={logo} width={100} alt="" />
           {/* <h1 className="navbar-my">MyCube</h1> */}
-          <motion.div className="navbar-cube-rotate">
+          {/* <motion.div className="navbar-cube-rotate">
             <CubeCanvas />
-          </motion.div>
+          </motion.div> */}
         </Link>
       </div>
       <div className="navbar-links">

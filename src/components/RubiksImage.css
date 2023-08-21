@@ -8,25 +8,14 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-  position: relative;
+  justify-content: center;
 }
 .rubiksimage-content {
   display: flex;
   flex-direction: column;
 }
 
-.rubiksimage-h1 {
-  flex: 1;
-  padding-top: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  align-content: center;
-}
 .rubiksimage-h1-first {
-  margin-top: 6rem;
   font-size: 2.5rem;
 
   font-weight: 500;
@@ -41,7 +30,7 @@
   line-height: 1.2;
 }
 .rubiksimage-content-button {
-  margin-top: 3rem;
+  margin-top: 1rem;
   top: 25rem;
   right: 15rem;
 }

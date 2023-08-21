@@ -1,9 +1,12 @@
 import React from "react";
 import "./About.css";
+import { motion } from "framer-motion";
+import { slideIn } from "../components/cubes";
+import SectionWrapper from "../components/SectionWraper";
 
 const About = () => {
   return (
-    <div className="about">
+    <motion.div variants={slideIn("left", "tween", 0.2, 1)} className="about  ">
       <h1>About Us</h1>
       <div className="about-div1"></div>
       <p>
@@ -69,8 +72,8 @@ const About = () => {
           Thank you for choosing MyCube – where every twist counts!
         </span>
       </p>
-    </div>
+    </motion.div>
   );
 };
 
-export default About;
+export default SectionWrapper(About, "about");

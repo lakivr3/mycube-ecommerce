@@ -25,7 +25,10 @@ const BestSellers = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
+  const handleClicked = () => {
+    navigate("/cubes");
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="bestsellers">
       <div className="bestsellers-h1">Best sellers</div>
@@ -58,7 +61,7 @@ const BestSellers = () => {
                     {cube.title}
                   </h1>
                   <h1 className="bestsellers-bestseller-cube-about-price">
-                    {cube.price},00 din
+                    {cube.price},00 €
                   </h1>
                   <div className="bestsellers-bestseller-cube-about-description">
                     <p>{cube.description}</p>
@@ -74,7 +77,7 @@ const BestSellers = () => {
         })}
       </div>
       <button
-        onClick={() => navigate("/cubes")}
+        onClick={handleClicked}
         className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg w-[200px]  rubiksimage-div-btn"
       >
         ALL PRODUCTS

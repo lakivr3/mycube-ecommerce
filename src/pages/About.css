@@ -56,3 +56,8 @@
   font-weight: 600;
   display: flex;
 }
+@media screen and (min-height: 900px) {
+  .about {
+    height: 100vh;
+  }
+}

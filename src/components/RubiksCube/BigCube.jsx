@@ -7,7 +7,6 @@ import * as THREE from "three";
 const Cube = () => {
   const cube = useGLTF("./FinalCube/scene.gltf");
   const cubeRef = useRef();
-  console.log(cube.animations);
 
   // Create an AnimationMixer
   const mixer = useRef();

@@ -11,22 +11,25 @@ const NewItems = () => {
   const [isMiddleScreen, setIsMiddleScreen] = useState(false); //768-3
   const [isLargeScreen, setIsLargeScreen] = useState(false); //1190-5
 
-  
   useEffect(() => {
     const handleResize = () => {
-      setIsLargeScreen(window.innerWidth <= 1190); 
+      setIsLargeScreen(window.innerWidth <= 1190);
 
-      setIsMiddleScreen(window.innerWidth <= 768); 
-      setIsSmallScreen(window.innerWidth <= 550); 
+      setIsMiddleScreen(window.innerWidth <= 768);
+      setIsSmallScreen(window.innerWidth <= 550);
     };
 
-    handleResize(); 
+    handleResize();
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+  const handleClicked = () => {
+    navigate("/cubes");
+    window.scrollTo(0, 0);
+  };
   return (
     <div className="bestsellers">
       <div className="bestsellers-h1">New products</div>
@@ -37,11 +40,11 @@ const NewItems = () => {
       </div>
       <div className="bestsellers-bestseller">
         {newcubes.map((cube, index) => {
-          if (isSmallScreen && index >= 2) {
+          if (isLargeScreen && index >= 4) {
             return null;
           } else if (isMiddleScreen && index >= 3) {
             return null;
-          } else if (isLargeScreen && index >= 4) {
+          } else if (isSmallScreen && index >= 2) {
             return null;
           } else {
             return (
@@ -61,7 +64,7 @@ const NewItems = () => {
                     {cube.title}
                   </h1>
                   <h1 className="bestsellers-bestseller-cube-about-price">
-                    {cube.price},00 din
+                    {cube.price},00 €
                   </h1>
                   <div className="bestsellers-bestseller-cube-about-description">
                     <p>{cube.description}</p>
@@ -77,7 +80,7 @@ const NewItems = () => {
         })}
       </div>
       <button
-        onClick={() => navigate("/cubes")}
+        onClick={handleClicked}
         className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg w-[200px]  rubiksimage-div-btn"
       >
         ALL PRODUCTS
