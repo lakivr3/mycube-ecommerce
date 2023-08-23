@@ -4,12 +4,21 @@ import { allcubes } from "../components/cubes";
 import "./CubeDetails.css";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GrFormAdd } from "react-icons/gr";
+import { useGlobalContext } from "../context/context";
 
 const CubeDetails = () => {
   const [quantity, setQuantity] = useState(1);
   const [isdisabled, setDisabled] = useState(true);
   const { id } = useParams();
   const selectedCube = allcubes.find((cube) => cube.id === id);
+  const { cart, setCart } = useGlobalContext();
+
+  const handleCart = (cube) => {
+    const myCart = [...cart, cube];
+    setCart(myCart);
+    console.log(cart);
+  };
+
   useEffect(() => {
     if (quantity <= 1) {
       setDisabled(true);
@@ -27,7 +36,7 @@ const CubeDetails = () => {
         <div className="selectedcube-details">
           <h1 className="selectedcube-details-title">{selectedCube.title}</h1>
           <h1 className="selectedcube-details-price">
-            {selectedCube.price}.00 din
+            {selectedCube.price},00 €
           </h1>
           <h1 className="selectedcube-details-code">
             Article code:{" "}
@@ -68,7 +77,10 @@ const CubeDetails = () => {
               </h1>
             </div>
           </div>
-          <button className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg w-[200px]  rubiksimage-div-btn">
+          <button
+            onClick={() => handleCart(selectedCube)}
+            className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg w-[200px]  rubiksimage-div-btn"
+          >
             Add to cart
           </button>
         </div>

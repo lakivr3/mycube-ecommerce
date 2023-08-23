@@ -13,8 +13,26 @@
   padding-left: 50px;
   width: 100%;
   align-items: center;
-  cursor: pointer;
   position: relative;
+}
+.cart {
+  position: relative;
+  width: 3.5rem;
+  height: 1rem;
+}
+
+.cart-h1 {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  color: red;
+  font-weight: 600;
+}
+.navbar-logo {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  align-content: center;
 }
 .navbar-logo img {
   width: 100px;
@@ -36,6 +54,7 @@
 }
 .navbar-links ul {
   display: flex;
+  justify-content: center;
 }
 .navbar-links li {
   margin: 0 1rem;
@@ -104,9 +123,15 @@
   .navbar-links-smallscreen {
     margin: 1.3rem;
   }
+  .cart-smallscreen {
+    margin-bottom: 0.5rem;
+  }
 }
 @media screen and (min-width: 996px) {
   .navbar-links-smallscreen {
+    display: none;
+  }
+  .cart-smallscreen {
     display: none;
   }
 }

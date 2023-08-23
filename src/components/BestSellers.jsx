@@ -3,14 +3,21 @@ import "./BestSellers.css";
 import { bestsellers } from "./cubes";
 import { BiCube } from "react-icons/bi";
 import { LuShoppingCart } from "react-icons/lu";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useGlobalContext } from "../context/context";
 
 const BestSellers = () => {
   const navigate = useNavigate();
+  const { cart, setCart } = useGlobalContext();
   const [isSmallScreen, setIsSmallScreen] = useState(false); //550-2
   const [isMiddleScreen, setIsMiddleScreen] = useState(false); //768-3
   const [isLargeScreen, setIsLargeScreen] = useState(false); //1190-5
 
+  const handleCart = (cube) => {
+    const myCart = [...cart, cube];
+    setCart(myCart);
+    console.log(cart);
+  };
   useEffect(() => {
     const handleResize = () => {
       setIsLargeScreen(window.innerWidth <= 1190);
@@ -46,28 +53,34 @@ const BestSellers = () => {
           } else {
             return (
               <div key={cube.id} className="bestsellers-bestseller-cube">
-                <div className="container">
-                  <img src={cube.img} alt="newcube" className="newcube" />
-                  <div className="overlay scale-up-center">
-                    <div className="content">
-                      <BiCube className="bicube " />
-                      <h1>More</h1>
-                      <h1>Details</h1>
+                <Link to={`/cubes/${cube.id}`}>
+                  <div className="container">
+                    <img src={cube.img} alt="newcube" className="newcube" />
+                    <div className="overlay scale-up-center">
+                      <div className="content">
+                        <BiCube className="bicube " />
+                        <h1>More</h1>
+                        <h1>Details</h1>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="bestsellers-bestseller-cube-about">
-                  <h1 className="bestsellers-bestseller-cube-about-title">
-                    {cube.title}
-                  </h1>
-                  <h1 className="bestsellers-bestseller-cube-about-price">
-                    {cube.price},00 €
-                  </h1>
-                  <div className="bestsellers-bestseller-cube-about-description">
-                    <p>{cube.description}</p>
+                  <div className="bestsellers-bestseller-cube-about">
+                    <h1 className="bestsellers-bestseller-cube-about-title">
+                      {cube.title}
+                    </h1>
+                    <h1 className="bestsellers-bestseller-cube-about-price">
+                      {cube.price},00 €
+                    </h1>
+                    <div className="bestsellers-bestseller-cube-about-description">
+                      <p>{cube.description}</p>
+                    </div>
                   </div>
-                </div>
-                <div className="bestsellers-bestseller-cube-about-cart">
+                </Link>
+
+                <div
+                  onClick={() => handleCart(cube)}
+                  className="bestsellers-bestseller-cube-about-cart"
+                >
                   <h1>Add to cart</h1>
                   <LuShoppingCart />
                 </div>

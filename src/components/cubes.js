@@ -21,11 +21,12 @@ const newcubes = [
     id: "mirror 2x2",
   },
   {
-    img: "https://www.speedcube.rs/files/7426/yuxin-little-magic-2x2-speed.jpg",
-    title: "Little Magic 2x2 Cube Stickerless",
-    price: 5,
-    description: "New 2x2 od yuxi with name of famos series of puzzles",
-    id: "magic2x2",
+    img: "https://www.speedcube.rs/files/7762/gear-shift-mefferts-kocka.jpg",
+    title: "Mefferts Gear Shift Cube",
+    price: 19,
+    description:
+      "Mefferts Gear Shift cube is very weird and really heavy to solve",
+    id: "meffertscube",
   },
   {
     img: "https://www.speedcube.rs/files/7415/QiYi-Pyraminx-2x2.jpg",

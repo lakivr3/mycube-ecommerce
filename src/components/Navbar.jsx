@@ -1,24 +1,30 @@
 import React, { useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import logo from "../assets/logo.png";
-
 import "./Navbar.css";
-import CubeCanvas from "./RubiksCube/Cube";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../context/context";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const { cart } = useGlobalContext();
 
   return (
     <nav className="navbar ">
       <div className="navbar-logo">
         <Link to="/">
           <img className="navbar-my" src={logo} width={100} alt="" />
-          {/* <h1 className="navbar-my">MyCube</h1> */}
-          {/* <motion.div className="navbar-cube-rotate">
-            <CubeCanvas />
-          </motion.div> */}
+        </Link>
+
+        <Link className="cart-smallscreen" to="/cart">
+          <div className="cart">
+            <AiOutlineShoppingCart
+              size={25}
+              style={{ marginBottom: "2rem", marginLeft: "1rem" }}
+            />
+            <h1 className="cart-h1">{cart.length}</h1>
+          </div>
         </Link>
       </div>
       <div className="navbar-links">
@@ -35,6 +41,17 @@ const Navbar = () => {
           <Link to="/contact">
             <li>Contact</li>
           </Link>
+          <div className="cart-bigscreen">
+            <Link to="/cart">
+              <div className="cart">
+                <AiOutlineShoppingCart
+                  size={25}
+                  style={{ marginTop: "2px", marginLeft: "1rem" }}
+                />
+                <h1 className="cart-h1">{cart.length}</h1>
+              </div>
+            </Link>
+          </div>
         </ul>
       </div>
       <div className="navbar-links-smallscreen ">

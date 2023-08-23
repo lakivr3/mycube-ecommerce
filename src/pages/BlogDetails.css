@@ -1,0 +1,25 @@
+.blogdetails {
+  padding: 2rem;
+  display: flex;
+  height: 100vh;
+}
+.blogdetails-details img {
+  width: 300px;
+  height: auto;
+  margin-top: 1rem;
+}
+.blogdetails-details-text {
+  display: flex;
+  flex-flow: column wrap;
+  margin-top: 2rem;
+}
+.blogdetails-details-text-time {
+  font-size: 12px;
+  display: flex;
+  justify-content: flex-end;
+}
+.blogdetails-details-text-title {
+  color: red;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}

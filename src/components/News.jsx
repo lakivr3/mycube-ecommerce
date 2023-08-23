@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { news } from "./cubes";
 import { AiOutlinePlus } from "react-icons/ai";
 import "./News.css";
+import { Link } from "react-router-dom";
 
 const News = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false); //570-2
@@ -46,28 +47,30 @@ const News = () => {
             return null;
           } else {
             return (
-              <div key={a.title} className="news-blogs-blog">
-                <div className="container">
-                  <img
-                    src={a.img}
-                    alt={a.title}
-                    className="news-blogs-blog-img"
-                  />
-                  <div className="overlay scale-up-center">
-                    <div className="content">
-                      <AiOutlinePlus className="aiplus " />
+              <Link to={`/blog/${a.id}`}>
+                <div key={a.title} className="news-blogs-blog">
+                  <div className="container">
+                    <img
+                      src={a.img}
+                      alt={a.title}
+                      className="news-blogs-blog-img"
+                    />
+                    <div className="overlay scale-up-center">
+                      <div className="content">
+                        <AiOutlinePlus className="aiplus " />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="news-blogs-blog-content">
-                  <h1 className="news-blogs-blog-content-title">{a.title}</h1>
+                  <div className="news-blogs-blog-content">
+                    <h1 className="news-blogs-blog-content-title">{a.title}</h1>
 
-                  <p className="news-blogs-blog-content-description">
-                    {truncateString(a.description, 110)}
-                  </p>
-                  <p className="news-blogs-blog-content-time">{a.time}</p>
+                    <p className="news-blogs-blog-content-description">
+                      {truncateString(a.description, 110)}
+                    </p>
+                    <p className="news-blogs-blog-content-time">{a.time}</p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           }
         })}
