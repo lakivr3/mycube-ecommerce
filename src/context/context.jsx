@@ -6,6 +6,7 @@ export const useGlobalContext = () => useContext(GlobalContext);
 
 const AppContext = ({ children }) => {
   const [cart, setCart] = useState([]);
+
   return (
     <GlobalContext.Provider value={{ cart, setCart }}>
       {children}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Cubes.css";
 import { allcubes, fadeIn } from "../components/cubes";
 import { BiCube } from "react-icons/bi";
@@ -10,21 +10,28 @@ import { useGlobalContext } from "../context/context";
 
 const Cubes = () => {
   const { cart, setCart } = useGlobalContext();
+  const [search, setSearch] = useState("");
+
   const handleCart = (cube) => {
-    const myCart = [...cart, cube];
-    setCart(myCart);
-    console.log(cart);
+    const filter = cart.find((c) => c.id === cube.id);
+    if (filter) {
+      return;
+    } else {
+      cube.quantity = 1;
+      const myCart = [...cart, cube];
+      setCart(myCart);
+    }
   };
   return (
     <div className="bestsellers">
       <div className="bestsellers-h1">All of our cubes</div>
 
-      <div className="bestsellers-bestseller cubes">
+      <div className="bestsellers-bestseller cubes ">
         {allcubes.map((cube, index) => (
           <motion.div
             variants={fadeIn("up", "spring", index * 0.2, 0.75)}
             key={cube.id}
-            className="bestsellers-bestseller-cube cubes-cube"
+            className="bestsellers-bestseller-cube cubes-cube "
           >
             <Link to={`/cubes/${cube.id}`}>
               <div className="container">

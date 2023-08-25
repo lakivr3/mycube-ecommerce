@@ -14,9 +14,15 @@ const BestSellers = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false); //1190-5
 
   const handleCart = (cube) => {
-    const myCart = [...cart, cube];
-    setCart(myCart);
-    console.log(cart);
+    const filter = cart.find((c) => c.id === cube.id);
+    if (filter) {
+      return;
+    } else {
+      cube.quantity = 1;
+      const myCart = [...cart, cube];
+      setCart(myCart);
+      console.log(filter);
+    }
   };
   useEffect(() => {
     const handleResize = () => {

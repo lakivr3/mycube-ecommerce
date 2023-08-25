@@ -14,9 +14,15 @@ const CubeDetails = () => {
   const { cart, setCart } = useGlobalContext();
 
   const handleCart = (cube) => {
-    const myCart = [...cart, cube];
-    setCart(myCart);
-    console.log(cart);
+    const filter = cart.find((c) => c.id === cube.id);
+    if (filter) {
+      return;
+    } else {
+      cube.quantity = quantity;
+      const myCart = [...cart, cube];
+      setCart(myCart);
+      console.log(filter);
+    }
   };
 
   useEffect(() => {
@@ -30,7 +36,7 @@ const CubeDetails = () => {
     return <div>Item not found</div>;
   }
   return (
-    <div className="h-[100vh]">
+    <div className="min-h-[100vh]">
       <div className="selectedcube">
         <img src={selectedCube.img} alt={selectedCube.img} />
         <div className="selectedcube-details">

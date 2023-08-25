@@ -47,7 +47,7 @@ const News = () => {
             return null;
           } else {
             return (
-              <Link to={`/blog/${a.id}`}>
+              <Link key={a.id + index} to={`/blog/${a.id}`}>
                 <div key={a.title} className="news-blogs-blog">
                   <div className="container">
                     <img

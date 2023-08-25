@@ -14,9 +14,15 @@ const NewItems = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(false); //1190-5
 
   const handleCart = (cube) => {
-    const myCart = [...cart, cube];
-    setCart(myCart);
-    console.log(cart);
+    const filter = cart.find((c) => c.id === cube.id);
+    if (filter) {
+      return;
+    } else {
+      cube.quantity = 1;
+      const myCart = [...cart, cube];
+      setCart(myCart);
+      console.log(filter);
+    }
   };
   useEffect(() => {
     const handleResize = () => {
@@ -55,7 +61,10 @@ const NewItems = () => {
             return null;
           } else {
             return (
-              <div className="bestsellers-bestseller-cube">
+              <div
+                key={cube.id + index}
+                className="bestsellers-bestseller-cube"
+              >
                 <Link key={cube.id} to={`/cubes/${cube.id}`}>
                   <div className="container">
                     <img src={cube.img} alt="newcube" className="newcube" />
