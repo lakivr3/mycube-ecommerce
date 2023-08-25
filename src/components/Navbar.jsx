@@ -9,6 +9,10 @@ import { useGlobalContext } from "../context/context";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const { cart } = useGlobalContext();
+  const handleToggleClick = () => {
+    setToggleMenu(false);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <nav className="navbar ">
@@ -74,16 +78,16 @@ const Navbar = () => {
             />
             <ul className="navbar-links-smallscreen">
               <Link to="/about">
-                <li>About</li>
+                <li onClick={() => handleToggleClick()}>About</li>
               </Link>
               <Link to="/cubes">
-                <li>Cubes</li>
+                <li onClick={() => handleToggleClick()}>Cubes</li>
               </Link>
               <Link to="/blog">
-                <li>Blog</li>
+                <li onClick={() => handleToggleClick()}>Blog</li>
               </Link>
               <Link to="/contact">
-                <li>Contact</li>
+                <li onClick={() => handleToggleClick()}>Contact</li>
               </Link>
             </ul>
           </div>
