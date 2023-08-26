@@ -4,7 +4,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import logo from "../assets/logo.png";
 import "./Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -14,14 +14,15 @@ const Navbar = () => {
     window.scrollTo(0, 0);
   };
 
+  const handleActive = () => {};
   return (
     <nav className="navbar ">
       <div className="navbar-logo">
-        <Link to="/">
+        <NavLink exact activeClassName="active" className="navbar-my" to="/">
           <img className="navbar-my" src={logo} width={100} alt="" />
-        </Link>
+        </NavLink>
 
-        <Link className="cart-smallscreen" to="/cart">
+        <NavLink className="cart-smallscreen" to="/cart">
           <div className="cart">
             <AiOutlineShoppingCart
               size={25}
@@ -29,24 +30,24 @@ const Navbar = () => {
             />
             <h1 className="cart-h1">{cart.length}</h1>
           </div>
-        </Link>
+        </NavLink>
       </div>
       <div className="navbar-links">
         <ul>
-          <Link to="/about">
+          <NavLink activeClassName="active " to="/about">
             <li>About</li>
-          </Link>
-          <Link to="/cubes">
+          </NavLink>
+          <NavLink activeClassName="active " to="/cubes">
             <li>Cubes</li>
-          </Link>
-          <Link to="/blog">
+          </NavLink>
+          <NavLink activeClassName="active" to="/blog">
             <li>Blog</li>
-          </Link>
-          <Link to="/contact">
+          </NavLink>
+          <NavLink activeClassName="active" to="/contact">
             <li>Contact</li>
-          </Link>
+          </NavLink>
           <div className="cart-bigscreen">
-            <Link to="/cart">
+            <NavLink to="/cart">
               <div className="cart">
                 <AiOutlineShoppingCart
                   size={25}
@@ -54,7 +55,7 @@ const Navbar = () => {
                 />
                 <h1 className="cart-h1">{cart.length}</h1>
               </div>
-            </Link>
+            </NavLink>
           </div>
         </ul>
       </div>
