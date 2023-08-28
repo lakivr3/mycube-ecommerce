@@ -18,7 +18,12 @@ const Navbar = () => {
   return (
     <nav className="navbar ">
       <div className="navbar-logo">
-        <NavLink exact activeClassName="active" className="navbar-my" to="/">
+        <NavLink
+          exact="true"
+          activeclassname="active"
+          className="navbar-my"
+          to="/"
+        >
           <img className="navbar-my" src={logo} width={100} alt="" />
         </NavLink>
 
@@ -34,16 +39,16 @@ const Navbar = () => {
       </div>
       <div className="navbar-links">
         <ul>
-          <NavLink activeClassName="active " to="/about">
+          <NavLink activeclassname="active " to="/about">
             <li>About</li>
           </NavLink>
-          <NavLink activeClassName="active " to="/cubes">
+          <NavLink activeclassname="active " to="/cubes">
             <li>Cubes</li>
           </NavLink>
-          <NavLink activeClassName="active" to="/blog">
+          <NavLink activeclassname="active" to="/blog">
             <li>Blog</li>
           </NavLink>
-          <NavLink activeClassName="active" to="/contact">
+          <NavLink activeclassname="active" to="/contact">
             <li>Contact</li>
           </NavLink>
           <div className="cart-bigscreen">
@@ -78,18 +83,18 @@ const Navbar = () => {
               onClick={() => setToggleMenu(false)}
             />
             <ul className="navbar-links-smallscreen">
-              <Link to="/about">
+              <NavLink to="/about">
                 <li onClick={() => handleToggleClick()}>About</li>
-              </Link>
-              <Link to="/cubes">
+              </NavLink>
+              <NavLink to="/cubes">
                 <li onClick={() => handleToggleClick()}>Cubes</li>
-              </Link>
-              <Link to="/blog">
+              </NavLink>
+              <NavLink to="/blog">
                 <li onClick={() => handleToggleClick()}>Blog</li>
-              </Link>
-              <Link to="/contact">
+              </NavLink>
+              <NavLink to="/contact">
                 <li onClick={() => handleToggleClick()}>Contact</li>
-              </Link>
+              </NavLink>
             </ul>
           </div>
         )}
