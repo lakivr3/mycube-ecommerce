@@ -5,6 +5,7 @@ import "./CubeDetails.css";
 import { AiOutlineMinus } from "react-icons/ai";
 import { GrFormAdd } from "react-icons/gr";
 import { useGlobalContext } from "../context/context";
+import { ToastContainer, toast } from "react-toastify";
 
 const CubeDetails = () => {
   const [quantity, setQuantity] = useState(1);
@@ -16,12 +17,30 @@ const CubeDetails = () => {
   const handleCart = (cube) => {
     const filter = cart.find((c) => c.id === cube.id);
     if (filter) {
-      return;
+      toast.info("Already added to cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } else {
-      cube.quantity = quantity;
+      toast.success("Added to cart!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      cube.quantity = 1;
       const myCart = [...cart, cube];
       setCart(myCart);
-      console.log(filter);
     }
   };
 
@@ -91,6 +110,7 @@ const CubeDetails = () => {
           </button>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 };

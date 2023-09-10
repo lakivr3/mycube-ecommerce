@@ -7,16 +7,35 @@ import { motion } from "framer-motion";
 import SectionWrapper from "../components/SectionWraper";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
+import { ToastContainer, toast } from "react-toastify";
 
 const Cubes = () => {
   const { cart, setCart } = useGlobalContext();
-  const [search, setSearch] = useState("");
 
   const handleCart = (cube) => {
     const filter = cart.find((c) => c.id === cube.id);
     if (filter) {
-      return;
+      toast.info("Already added to cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } else {
+      toast.success("Added to cart!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       cube.quantity = 1;
       const myCart = [...cart, cube];
       setCart(myCart);
@@ -68,6 +87,7 @@ const Cubes = () => {
           </motion.div>
         ))}
       </div>
+      <ToastContainer />
     </div>
   );
 };

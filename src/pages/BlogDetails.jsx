@@ -7,7 +7,7 @@ const BlogDetails = () => {
   const selectedBlog = news.find((a) => a.id == id);
   console.log(selectedBlog);
   return (
-    <div className="min-h-[125vh]">
+    <div className="  smallscreen-blog ">
       <div className="blogdetails">
         <div className="blogdetails-details">
           <div className="blogdetails-details-text">

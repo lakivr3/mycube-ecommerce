@@ -5,6 +5,8 @@ import { BiCube } from "react-icons/bi";
 import { LuShoppingCart } from "react-icons/lu";
 import { useNavigate, Link } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NewItems = () => {
   const { cart, setCart } = useGlobalContext();
@@ -16,12 +18,30 @@ const NewItems = () => {
   const handleCart = (cube) => {
     const filter = cart.find((c) => c.id === cube.id);
     if (filter) {
-      return;
+      toast.info("Already added to cart", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     } else {
+      toast.success("Added to cart!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       cube.quantity = 1;
       const myCart = [...cart, cube];
       setCart(myCart);
-      console.log(filter);
     }
   };
   useEffect(() => {
@@ -101,6 +121,7 @@ const NewItems = () => {
           }
         })}
       </div>
+      <ToastContainer />
       <button
         onClick={handleClicked}
         className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg w-[200px]  rubiksimage-div-btn"

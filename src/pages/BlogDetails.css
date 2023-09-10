@@ -23,3 +23,11 @@
   font-size: 2rem;
   margin-bottom: 1rem;
 }
+.smallscreen-blog {
+  min-height: 125vh;
+}
+@media screen and (max-width: 500px) {
+  .smallscreen-blog {
+    min-height: 170vh;
+  }
+}
