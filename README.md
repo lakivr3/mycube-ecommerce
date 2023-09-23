@@ -1,8 +1,11 @@
-# React + Vite
+# MyCube E-commerce App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MyCube is an e-commerce application powered by **Vite**, **React**, and **Three.js**, offering a unique 3D shopping experience.
 
-Currently, two official plugins are available:
+## Quick Start
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. **Clone the repo:**
+
+   ```bash
+   git clone https://github.com/your-username/mycube-e-commerce.git
+   cd mycube-e-commerce
