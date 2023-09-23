@@ -4,7 +4,7 @@ import NewItems from "./NewItems";
 import About from "../pages/About";
 import BestSellers from "./BestSellers";
 import Blog from "../pages/Blog";
-import End from "./End";
+import Footer from "./Footer";
 import Cubes from "../pages/Cubes";
 import News from "./News";
 import Contact from "../pages/Contact";
@@ -33,5 +33,5 @@ export {
   About,
   BestSellers,
   Blog,
-  End,
+  Footer,
 };

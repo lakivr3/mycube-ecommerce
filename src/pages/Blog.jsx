@@ -17,7 +17,7 @@ const Blog = () => {
   };
 
   return (
-    <div className="height">
+    <div className="min-h-[100vh]">
       <div className="blog">
         <h1 className="blog-title">News</h1>
         <div className="blog-blogs">

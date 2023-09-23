@@ -5,11 +5,11 @@ import {
   AiOutlineInstagram,
 } from "react-icons/ai";
 import { CiTwitter } from "react-icons/ci";
-import "./End.css";
+import "./Footer.css";
 
-const End = () => {
+const Footer = () => {
   return (
-    <div className="theend">
+    <footer className="theend">
       <h1 className="theend-h1">
         MyCube, Nis, Serbia 2023. All rights reserved. E-Mail:{" "}
         <span className="span">mycube@gmail.com</span>. Telephone:{" "}
@@ -21,8 +21,8 @@ const End = () => {
         <CiTwitter className="twitter" />
         <AiOutlineYoutube className="youtube" />
       </div>
-    </div>
+    </footer>
   );
 };
 
-export default End;
+export default Footer;

@@ -38,7 +38,7 @@ const CubeDetails = () => {
         progress: undefined,
         theme: "light",
       });
-      cube.quantity = 1;
+      cube.quantity = quantity;
       const myCart = [...cart, cube];
       setCart(myCart);
     }

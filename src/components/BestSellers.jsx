@@ -5,7 +5,7 @@ import { BiCube } from "react-icons/bi";
 import { LuShoppingCart } from "react-icons/lu";
 import { Link, useNavigate } from "react-router-dom";
 import { useGlobalContext } from "../context/context";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const BestSellers = () => {
