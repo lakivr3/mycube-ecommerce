@@ -1,11 +1,22 @@
 # MyCube E-commerce App
 
-MyCube is an e-commerce application powered by **Vite**, **React**, and **Three.js**, offering a unique 3D shopping experience.
+## Description
 
-## Quick Start
+MyCube is an e-commerce application built with Vite, React, and Three.js, offering an immersive 3D shopping experience.
 
-1. **Clone the repo:**
+## Getting Started
 
-   ```bash
+### Prerequisites
+
+- Node.js and npm must be installed.
+
+### Installation
+
+1. Clone the repository:
+
+   ```shell
    git clone https://github.com/your-username/mycube-e-commerce.git
    cd mycube-e-commerce
+   npm install
+   npm run dev
+   Open http://localhost:3000 in your browser.
